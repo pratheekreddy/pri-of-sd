@@ -1,0 +1,7 @@
+Camelot_Data/
+GameplayLogs/
+MonoBleedingEdge/
+Camelot/
+*.java
+/StartExperienceManager
+/ManualExperienceManager
