@@ -1,6 +1,11 @@
-#This is the Starting point of the story. kindly configure this file in your startExperienceManager file
+#This is the Starting point of the story. 
+# Configure this file in your startExperienceManager file
 # Try not to logic in this file except importing files.(should follow modularized coding practice)
 
-from intro import intro
+from intro import dream,scene1
 
-intro()
+dream()
+scene1()
+
+while(True):
+    input()

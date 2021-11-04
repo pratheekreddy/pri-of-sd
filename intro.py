@@ -1,7 +1,7 @@
 from action import action
 from create_char import create_char
 
-def intro():
+def dream():
     action('ShowMenu()')
     action('CreatePlace(Cottage, Cottage)')
     action('CreatePlace(Ruins,Ruins')
@@ -28,13 +28,13 @@ def intro():
     action('SetPosition(Sword2,Sol2)')
     action('Draw(Sol2,Sword2)')
 
-    create_char('Sol2','D','HeavyArmour','Ruins.Altar')
+    create_char('Sol3','D','HeavyArmour','Ruins.Altar')
 
     action('CreateItem(Sword3,Sword)')
     action('SetPosition(Sword3,Sol3)')
     action('Draw(Sol3,Sword3)')
 
-    create_char('Sol2','D','HeavyArmour','Ruins.Throne')
+    create_char('Sol4','D','HeavyArmour','Ruins.Throne')
 
 
     action('CreateItem(Sword4,Sword)')
@@ -77,11 +77,10 @@ def intro():
     action('OpenFurniture(Charlie1,Ruins.Chest)')
     action('CreateEffect(Ruins.Chest,Explosion)')
 
+
+def scene1():
     action('SetCameraFocus(Charlie)')
-
-
     action('Wait(1)')
-
     action('SetNarration(Charlie: Oh boy!.. That was a dream!.)')
     action('ShowNarration')
     action('Wait(3)')

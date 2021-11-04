@@ -5,3 +5,4 @@ Camelot/
 *.java
 /StartExperienceManager
 /ManualExperienceManager
+/__pycache__
