@@ -1,6 +1,7 @@
 # HOW TO USE ACTION:
 # First import action function from action file
-# Then pass a parameter i.e. command according to the need. This can be modified according to the requirements
+# Then pass a parameter i.e. command according to the need.
+# This can be modified according to the requirements
 # Point of Contact: Pratheek Keddy Katta
 
 def check_for_success(command):

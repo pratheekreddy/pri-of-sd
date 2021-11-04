@@ -1,3 +1,6 @@
+# need to pass argument- name, body-type, clothing, 
+# position and hairstyle in an order to create a character 
+
 from action import action
 
 def create_char(name , body_type , clothing ,position, hair="Spiky"):

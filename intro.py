@@ -49,26 +49,26 @@ def dream():
     action('Wait(2)')
 
     action('WalkTo(Charlie1, Sol1)')
+    action('PlaySound(Draw)','False')
     action('Attack(Charlie1,Sol1)')
-    action('PlaySound(Draw)')
     action('Die(Sol1)')
 
     action('WalkTo(Charlie1,Sol2)')
-    action('PlaySound(Draw)')
+    action('PlaySound(Draw)','False')
     action('Attack(Charlie1,Sol2)')
     action('Die(Sol2)')
 
     action('WalkTo(Charlie1,Sol3)')
-    action('PlaySound(Draw)')
+    action('PlaySound(Draw)','False')
     action('Attack(Charlie1,Sol3)')
     action('Die(Sol3)')
 
     action('WalkTo(Charlie1,Sol4)')
-    action('PlaySound(Draw)')
+    action('PlaySound(Draw)','False')
     action('Attack(Charlie1,Sol4)')
-    action('PlaySound(Draw)')
+    action('PlaySound(Draw)','False')
     action('Attack(Sol4,Charlie1)')
-    action('PlaySound(Draw)')
+    action('PlaySound(Draw)','Flase')
     action('Attack(Charlie1,Sol4)')
     action('Die(Sol4)')
 
