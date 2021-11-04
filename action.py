@@ -20,4 +20,8 @@ def check_for_success(command):
 def action(command, wait=True):
     # Format command
     print('start ' + command)
-    return check_for_success(command)
+    if wait==True:
+        # Call function to check for its success
+        return check_for_success(command)
+    else:
+        return True
