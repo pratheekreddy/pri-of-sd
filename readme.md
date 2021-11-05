@@ -1,4 +1,4 @@
-## Clone this repository in camlot folder
+## Clone this repository in camelot folder
 
 ```
 git clone https://github.com/pratheekreddy/pri-of-sd.git
