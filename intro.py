@@ -21,15 +21,15 @@ def dream():
 
     soldier2=Create_char('Soldier2','D','HeavyArmour','Ruins.Plant')
 
-    soldier2.give_item('Sword_sol3','Sword','Sol2')
+    soldier2.give_item('Sword_sol3','Sword')
 
     soldier3=Create_char('Soldier3','D','HeavyArmour','Ruins.Altar')
 
-    soldier3.give_item('Sword3','Sword','Sol3')
+    soldier3.give_item('Sword3','Sword')
 
     soldier4=Create_char('Soldier4','D','HeavyArmour','Ruins.Throne')
 
-    soldier4.give_item('Sword4','Sword','Sol4')
+    soldier4.give_item('Sword4','Sword')
 
     action('Wait(1)')
     action('HideMenu()')
