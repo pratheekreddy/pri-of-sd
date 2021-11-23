@@ -30,6 +30,7 @@ def dream():
     soldier4=Create_char('Soldier4','D','HeavyArmour','Ruins.Throne')
 
     soldier4.give_item('Sword4','Sword','Sol4')
+    
 
     action('Wait(1)')
     action('HideMenu()')
