@@ -23,7 +23,7 @@ action('CreatePlace(Ruins,Ruins')
 
 #------------
 dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4)
-scene1()
+scene1(charlie_earth)
 
 while(True):
     input(charlie_earth)
