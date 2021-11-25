@@ -54,5 +54,5 @@ def scene1(charlie_earth):
     action('ShowNarration')
     action('Wait(3)')
     action('HideNarration')
-    action('Exit(charlie_earth,Cottage.Door)')
-    action('Enter(charlie_earth,Bridge.NorthEnd)')
+    action('Exit('+charlie_earth.name+',Cottage.Door)')
+    action('Enter('+charlie_earth.name+',Bridge.NorthEnd)')
