@@ -5,6 +5,12 @@
 from intro import dream,scene1
 from action import action
 from create_char import Create_char
+
+#CREATE LOCATIONS
+action('CreatePlace(Cottage, Cottage)')
+action('CreatePlace(Ruins,Ruins')
+#-----------
+
 # CREATE Charactors 
 action('ShowMenu()')
 charlie_earth=Create_char('Charlie','D','Merchant','Cottage.Bed','Spiky')
@@ -13,10 +19,6 @@ soldier1=Create_char('Soldier1','D','HeavyArmour','Ruins.DirtPile')
 soldier2=Create_char('Soldier2','D','HeavyArmour','Ruins.Plant')
 soldier3=Create_char('Soldier3','D','HeavyArmour','Ruins.Altar')
 soldier4=Create_char('Soldier4','D','HeavyArmour','Ruins.Throne')
-#-----------
-#CREATE LOCATIONS
-action('CreatePlace(Cottage, Cottage)')
-action('CreatePlace(Ruins,Ruins')
 #-----------
 
 # CREATE OBJECTS OR GLOBAL VARIABLES
