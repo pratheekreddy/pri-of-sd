@@ -1,33 +1,17 @@
 from action import action
-from create_char import Create_char
 from create_item import create_item
 
-def dream():
-    action('ShowMenu()')
-    action('CreatePlace(Cottage, Cottage)')
-    action('CreatePlace(Ruins,Ruins')
-
-    global charlie_earth
-    charlie_earth=Create_char('Charlie','D','Merchant','Cottage.Bed','Spiky')
+def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
     
-    action('Sleep(Charlie,Cottage.Bed)')
-
-    global charlie_dream
-    charlie_dream=Create_char('Charlie1','D','King','Ruins.Exit','Spiky')
+    action('Sleep('+charlie_earth.name+',Cottage.Bed)')
     charlie_dream.give_item('Sword_charlie','Sword')
 
-    soldier1=Create_char('Soldier1','D','HeavyArmour','Ruins.DirtPile')
     soldier1.give_item('Sword_sol1','Sword')
-
-    soldier2=Create_char('Soldier2','D','HeavyArmour','Ruins.Plant')
 
     soldier2.give_item('Sword_sol3','Sword')
 
-    soldier3=Create_char('Soldier3','D','HeavyArmour','Ruins.Altar')
 
     soldier3.give_item('Sword3','Sword')
-
-    soldier4=Create_char('Soldier4','D','HeavyArmour','Ruins.Throne')
 
     soldier4.give_item('Sword4','Sword')
 
@@ -58,7 +42,7 @@ def attack(x,y):
     action('Attack('+x+','+y+')')
     action('Die('+y+')')
 
-def scene1():
+def scene1(charlie_earth):
     action('SetCameraFocus('+charlie_earth.name+')')
     action('Wait(1)')
     action('SetNarration(Charlie: Oh boy!.. That was a dream!.)')
