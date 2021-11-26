@@ -10,7 +10,7 @@ def AlchemyStore(charlie_earth,a_shop_vendor):
     action('Take('+charlie_earth+',EvilBook)')
     action('WalkTo('+charlie_earth+',Apple)')
     action('Take('+charlie_earth+',Apple)')
-    action('WalkTo('+charlie_earth+', AlchemyShop.Bar)')
+    action('WalkTo('+charlie_earth+', '+a_shop_vendor+')')
     action('Face('+a_shop_vendor+','+charlie_earth+')')
     action('SetNarration('+charlie_earth.name+': Hi! can I get these two items please)')
     action('ShowNarration')
