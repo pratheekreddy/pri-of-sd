@@ -2,7 +2,6 @@ from action import action
 from create_item import create_item
 
 def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
-    
     action('Sleep('+charlie_earth.name+',Cottage.Bed)')
     charlie_dream.give_item('Sword_charlie','Sword')
 

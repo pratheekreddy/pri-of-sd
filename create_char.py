@@ -20,4 +20,3 @@ class Create_char:
 
     def camera(self):
         action('SetCameraFocus('+self.name+')')
-
