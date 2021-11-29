@@ -7,6 +7,8 @@ def MysteryWorld(charlie_earth,f_shop_vendor):
     action('Enter('+charlie_earth.name+',Mysteryworld.NorthEnd)',False)
     action('CreateEffect('+charlie_earth+',Resurrection)')
     action('WalkTo('+charlie_earth+',MysteryWorld.RedHouseDoor)',False)
+
+def visit_Fruitshop():
     create_item('Sword_t','Sword',f_shop_vendor,False)
     create_item('Apple1','Apple','FruitShop.Table',False)
     create_item('Apple2','Apple','FruitShop.Table',False)
@@ -23,3 +25,5 @@ def MysteryWorld(charlie_earth,f_shop_vendor):
     action('Draw('+f_shop_vendor+',Sword_t')
     action('Attack('+f_shop_vendor+','+charlie_earth+')')
     action('Die('+charlie_earth+')')
+
+
