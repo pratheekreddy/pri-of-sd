@@ -1,5 +1,6 @@
 from action import action
 from create_item import create_item
+from message import Message
 
 def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
     action('Sleep('+charlie_earth.name+',Cottage.Bed)')
@@ -19,7 +20,7 @@ def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
 
     charlie_dream.camera()
     action('SetCameraMode(Track)')
-    action('SetCameraMode(Follow)')
+    #action('SetCameraMode(Follow)')
     action('Wait(2)')
 
     attack(charlie_dream.name,soldier1.name)
@@ -43,11 +44,7 @@ def attack(x,y):
 
 def scene1(charlie_earth):
     action('SetCameraFocus('+charlie_earth.name+')')
-    action('Wait(1)')
-    action('SetNarration(Charlie: Oh boy!.. That was a dream!.)')
-    action('ShowNarration')
-    action('Wait(3)')
-    action('HideNarration')
+    Message(charlie_earth,'Oh boy!.. That was a dream!.')
     action('Sit('+charlie_earth.name+',Cottage.Bed)')
     action('SetNarration('+charlie_earth.name+': A boring day starts again)')
     action('ShowNarration')
