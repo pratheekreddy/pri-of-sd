@@ -3,7 +3,7 @@
 # Try not to logic in this file except importing files.(should follow modularized coding practice)
 
 from action import action
-from Class.create_char import Create_char
+from create_char import Create_char
 from intro import dream
 from begining import scene1
 from alchemy_store import AlchemyStore
@@ -11,7 +11,7 @@ from blacksmith import BlackSmith
 from MysteryWorld import MysteryWorld
 from visit_fruitshop import visit_Fruitshop
 from explore_city import explore_city
-from Class.Places import Place
+from Places import Place
 
 
 #CREATE LOCATIONS

@@ -1,5 +1,5 @@
 from action import action
-from Class.create_item import Create_item
+from create_item import Create_item
 from message import Message
 
 def visit_Fruitshop(charlie_earth,f_shop_vendor):

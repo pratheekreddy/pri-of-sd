@@ -1,5 +1,5 @@
 from action import action
-from Class.create_item import Create_item
+from create_item import Create_item
 
 
 def BlackSmith(charlie_earth,b_shop_vendor):
