@@ -1,6 +1,4 @@
 from action import action
-from create_item import create_item
-from message import Message
 
 def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
     action('Sleep('+charlie_earth.name+',Cottage.Bed)')
@@ -22,7 +20,17 @@ def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
     action('SetCameraMode(Track)')
     #action('SetCameraMode(Follow)')
     action('Wait(2)')
+    #player choise
+    war_with_sol(charlie_dream,soldier1,soldier2,soldier3,soldier3)
+    #function for sleeping gass
+    sleeping_gas(soldier1,soldier2,soldier3,soldier4)
+    # function for escape
+    action('WalkTo('+charlie_dream.name+',Ruins.Chest)')
+    action('PutDown('+charlie_dream.name+',Sword)')
+    action('OpenFurniture('+charlie_dream.name+',Ruins.Chest)')
+    action('CreateEffect(Ruins.Chest,Explosion)')
 
+def war_with_sol(charlie_dream,soldier1,soldier2,soldier3,soldier4):
     attack(charlie_dream.name,soldier1.name)
 
     attack(charlie_dream.name,soldier2.name)
@@ -31,24 +39,18 @@ def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
 
     attack(charlie_dream.name,soldier4.name)
 
-    action('WalkTo('+charlie_dream.name+',Ruins.Chest)')
-    action('PutDown('+charlie_dream.name+',Sword)')
-    action('OpenFurniture('+charlie_dream.name+',Ruins.Chest)')
-    action('CreateEffect(Ruins.Chest,Explosion)')
+def sleeping_gas(soldier1,soldier2,soldier3,soldier4):
+    action('CreateEffect('+soldier1.name+',Brew)',False)
+    action('Die('+soldier1.name+')',False)
+    action('CreateEffect('+soldier2.name+',Brew)',False)
+    action('Die('+soldier1.name+')',False)
+    action('CreateEffect('+soldier3.name+',Brew)',False)
+    action('Die('+soldier1.name+')',False)
+    action('CreateEffect('+soldier4.name+',Brew)',False)
+    action('Die('+soldier1.name+')',False)
 
 def attack(x,y):
     action('WalkTo('+x+','+y+')')
     action('PlaySound(Draw)','False')
     action('Attack('+x+','+y+')')
     action('Die('+y+')')
-
-def scene1(charlie_earth):
-    action('SetCameraFocus('+charlie_earth.name+')')
-    Message(charlie_earth,'Oh boy!.. That was a dream!.')
-    action('Sit('+charlie_earth.name+',Cottage.Bed)')
-    action('SetNarration('+charlie_earth.name+': A boring day starts again)')
-    action('ShowNarration')
-    action('Wait(3)')
-    action('HideNarration')
-    action('Exit('+charlie_earth.name+',Cottage.Door)')
-    action('Enter('+charlie_earth.name+',Bridge.NorthEnd)')
