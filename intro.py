@@ -1,4 +1,5 @@
 from action import action
+from attack import attack
 
 def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
     action('Sleep('+charlie_earth.name+',Cottage.Bed)')
@@ -47,9 +48,3 @@ def sleeping_gas(soldier1,soldier2,soldier3,soldier4):
     action('Die('+soldier3.name+')',False)
     action('CreateEffect('+soldier4.name+',Brew)',False)
     action('Die('+soldier4.name+')',False)
-
-def attack(x,y):
-    action('WalkTo('+x+','+y+')')
-    action('PlaySound(Draw)',False)
-    action('Attack('+x+','+y+')')
-    action('Die('+y+')')
