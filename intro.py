@@ -21,18 +21,17 @@ def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
     #action('SetCameraMode(Follow)')
     action('Wait(2)')
     #player choise
-    war_with_sol(charlie_dream,soldier1,soldier2,soldier3,soldier3)
+    war_with_sol(charlie_dream,soldier1,soldier2,soldier3,soldier4)
     #function for sleeping gass
-    sleeping_gas(soldier1,soldier2,soldier3,soldier4)
+    # sleeping_gas(soldier1,soldier2,soldier3,soldier4)
     # function for escape
     action('WalkTo('+charlie_dream.name+',Ruins.Chest)')
-    action('PutDown('+charlie_dream.name+',Sword)')
+    action('PutDown('+charlie_dream.name+',Sword_charlie)')
     action('OpenFurniture('+charlie_dream.name+',Ruins.Chest)')
     action('CreateEffect(Ruins.Chest,Explosion)')
 
 def war_with_sol(charlie_dream,soldier1,soldier2,soldier3,soldier4):
     attack(charlie_dream.name,soldier1.name)
-
     attack(charlie_dream.name,soldier2.name)
 
     attack(charlie_dream.name,soldier3.name)
@@ -43,14 +42,14 @@ def sleeping_gas(soldier1,soldier2,soldier3,soldier4):
     action('CreateEffect('+soldier1.name+',Brew)',False)
     action('Die('+soldier1.name+')',False)
     action('CreateEffect('+soldier2.name+',Brew)',False)
-    action('Die('+soldier1.name+')',False)
+    action('Die('+soldier2.name+')',False)
     action('CreateEffect('+soldier3.name+',Brew)',False)
-    action('Die('+soldier1.name+')',False)
+    action('Die('+soldier3.name+')',False)
     action('CreateEffect('+soldier4.name+',Brew)',False)
-    action('Die('+soldier1.name+')',False)
+    action('Die('+soldier4.name+')',False)
 
 def attack(x,y):
     action('WalkTo('+x+','+y+')')
-    action('PlaySound(Draw)','False')
+    action('PlaySound(Draw)',False)
     action('Attack('+x+','+y+')')
     action('Die('+y+')')

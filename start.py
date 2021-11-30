@@ -4,7 +4,8 @@
 
 from action import action
 from create_char import Create_char
-from intro import dream,scene1
+from intro import dream
+from begining import scene1
 from alchemy_store import AlchemyStore
 from blacksmith import BlackSmith
 from MysteryWorld import MysteryWorld
