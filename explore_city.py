@@ -1,5 +1,4 @@
 from action import action
-from message import Message
 
 def explore_city(charlie_earth,bandit1,bandit2,bandit3):
     action('WalkTo('+charlie_earth.name+',Mysteryworld.Horse)')
@@ -9,4 +8,4 @@ def explore_city(charlie_earth,bandit1,bandit2,bandit3):
     action('Attack('+bandit1.name+','+charlie_earth.name+',False)')
     action('Attack('+bandit2.name+','+charlie_earth.name+',False)')
     action('MoveAway('+charlie_earth.name+')')
-    
+
