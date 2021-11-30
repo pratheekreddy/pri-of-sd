@@ -2,7 +2,7 @@
 # position and hairstyle in an order to create a character 
 
 from action import action
-from create_item import create_item
+from create_item import Create_item
 
 class Create_char:
 
@@ -15,7 +15,7 @@ class Create_char:
         action('SetPosition('+name+','+position+')')
     
     def give_item(self,i_name,i_type):
-        create_item(i_name,i_type,self.name)
+        Create_item(i_name,i_type,self.name)
         action('Draw('+self.name+','+i_name+')')
 
     def camera(self):

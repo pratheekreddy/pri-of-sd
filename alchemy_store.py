@@ -1,11 +1,11 @@
 from action import action
-from create_item import create_item
+from Class.create_item import Create_item
 
 
 def AlchemyStore(charlie_earth,a_shop_vendor):
     action('Enter('+charlie_earth.name+',AlchemyShop.Door)')
-    create_item('Apple','Apple','AlchemyShop.Table')
-    create_item('EvilBook','EvilBook','AlchemyShop.Bookshelf')
+    Create_item('Apple','Apple','AlchemyShop.Table')
+    Create_item('EvilBook','EvilBook','AlchemyShop.Bookshelf')
     action('WalkTo('+charlie_earth.name+',EvilBook)')
     action('Take('+charlie_earth.name+',EvilBook)')
     action('WalkTo('+charlie_earth.name+',Apple)')

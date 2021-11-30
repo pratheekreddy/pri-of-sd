@@ -1,14 +1,14 @@
 from action import action
-from create_item import create_item
+from Class.create_item import Create_item
 from message import Message
 
 def visit_Fruitshop(charlie_earth,f_shop_vendor):
     action('WalkTo('+charlie_earth+',MysteryWorld.RedHouseDoor)',False)
-    create_item('Sword_t','Sword',f_shop_vendor,False)
-    create_item('Apple1','Apple','FruitShop.Table',False)
-    create_item('Apple2','Apple','FruitShop.Table',False)
-    create_item('Apple3','Apple','FruitShop.Table',False)
-    create_item('Apple4','Apple','FruitShop.Table')
+    Create_item('Sword_t','Sword',f_shop_vendor,False)
+    Create_item('Apple1','Apple','FruitShop.Table',False)
+    Create_item('Apple2','Apple','FruitShop.Table',False)
+    Create_item('Apple3','Apple','FruitShop.Table',False)
+    Create_item('Apple4','Apple','FruitShop.Table')
     action('Enter('+charlie_earth.name+',FruitShop.Door)')
     action('Take('+charlie_earth.name+',Apple1')
     action('WalkTo('+charlie_earth.name+','+f_shop_vendor.name+')')

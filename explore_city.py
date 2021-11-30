@@ -1,5 +1,4 @@
 from action import action
-from create_item import create_item
 from message import Message
 
 def explore_city(charlie_earth,bandit1,bandit2,bandit3):

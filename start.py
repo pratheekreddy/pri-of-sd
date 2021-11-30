@@ -3,7 +3,7 @@
 # Try not to logic in this file except importing files.(should follow modularized coding practice)
 
 from action import action
-from create_char import Create_char
+from Class.create_char import Create_char
 from intro import dream
 from begining import scene1
 from alchemy_store import AlchemyStore
@@ -11,17 +11,17 @@ from blacksmith import BlackSmith
 from MysteryWorld import MysteryWorld
 from visit_fruitshop import visit_Fruitshop
 from explore_city import explore_city
-
+from Class.Places import Place
 
 
 #CREATE LOCATIONS
-action('CreatePlace(Cottage, Cottage)')
-action('CreatePlace(Ruins,Ruins')
-action('CreatePlace(Bridge,Bridge')
-action('CreatePlace(AlchemyShop,AlchemyShop)')
-action('CreatePlace(Blacksmith,Blacksmith)')
-action('CreatePlcae(FruitShop,AlchemyShop)')
-action('CreatePlace(MysteryWorld,City)')
+Cottage=Place('Cottage', 'Cottage')
+Ruins=Place('Ruins','Ruins')
+Bridge=Place('Bridge','Bridge')
+AlchemyShop=Place('AlchemyShop','AlchemyShop')
+Blacksmith=Place('Blacksmith','Blacksmith')
+FruitShop=Place('FruitShop','AlchemyShop')
+P_MysteryWorld=Place('MysteryWorld','City')
 #-----------
 
 action('ShowMenu()')

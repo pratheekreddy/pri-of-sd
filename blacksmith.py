@@ -1,10 +1,10 @@
 from action import action
-from create_item import create_item
+from Class.create_item import Create_item
 
 
 def BlackSmith(charlie_earth,b_shop_vendor):
     action('Enter('+charlie_earth.name+',Blacksmith.Door)')
-    create_item('Sword','Sword','Blacksmith.Table')
+    Create_item('Sword','Sword','Blacksmith.Table')
     action('WalkTo('+charlie_earth.name+',Sword)')
     action('Take('+charlie_earth.name+',Sword)')
     action('WalkTo('+charlie_earth.name+', '+b_shop_vendor.name+')')
