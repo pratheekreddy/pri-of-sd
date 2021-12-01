@@ -4,32 +4,27 @@ from attack import attack
 def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
     action('Sleep('+charlie_earth.name+',Cottage.Bed)')
     charlie_dream.give_item('Sword_charlie','Sword')
-
     soldier1.give_item('Sword_sol1','Sword')
-
     soldier2.give_item('Sword_sol3','Sword')
-
-
     soldier3.give_item('Sword3','Sword')
-
     soldier4.give_item('Sword4','Sword')
-
-    action('Wait(1)')
     action('HideMenu()')
 
     charlie_dream.camera()
     action('SetCameraMode(Track)')
-    #action('SetCameraMode(Follow)')
-    action('Wait(2)')
+    action('SetCameraMode(Follow)')
     #player choise
-    war_with_sol(charlie_dream,soldier1,soldier2,soldier3,soldier4)
+    action('EnableIcon(war_with_sol,Sword,Charlie,"Kill with Sword",true)')
+    #war_with_sol(charlie_dream,soldier1,soldier2,soldier3,soldier4)
     #function for sleeping gass
-    # sleeping_gas(soldier1,soldier2,soldier3,soldier4)
+    sleeping_gas(soldier1,soldier2,soldier3,soldier4)
     # function for escape
+    action('SetCameraMode(Track)')
     action('WalkTo('+charlie_dream.name+',Ruins.Chest)')
     action('PutDown('+charlie_dream.name+',Sword_charlie)')
     action('OpenFurniture('+charlie_dream.name+',Ruins.Chest)')
     action('CreateEffect(Ruins.Chest,Explosion)')
+
 
 def war_with_sol(charlie_dream,soldier1,soldier2,soldier3,soldier4):
     attack(charlie_dream.name,soldier1.name)
