@@ -8,9 +8,6 @@ from intro import dream
 from begining import scene1
 from alchemy_store import AlchemyStore
 from blacksmith import BlackSmith
-from MysteryWorld import MysteryWorld
-from visit_fruitshop import visit_Fruitshop
-from explore_city import explore_city
 from Places import Place
 
 
@@ -35,9 +32,11 @@ soldier3=Create_char('Soldier3','D','HeavyArmour','Ruins.Altar')
 soldier4=Create_char('Soldier4','D','HeavyArmour','Ruins.Throne')
 a_shop_vendor=Create_char('a_shop_vendor','A','Merchant','AlchemyShop.Bar')
 b_shop_vendor=Create_char('b_shop_vendor','F','Merchant','Blacksmith.Anvil')
-bandit1=Create_char('bandit1','B','Bandit','MysteryWorld.EastEnd')
-bandit2=Create_char('bandit2','B','Bandit','MysteryWorld.EastEnd')
-bandit3=Create_char('bandit3','B','Bandit','MysteryWorld.EastEnd')
+f_shop_vendor=Create_char('f_shop_vendor','A','Peasant','FruitShop.Bar')
+bandit1=Create_char('bandit1','B','LightArmour','MysteryWorld.EastEnd')
+bandit2=Create_char('bandit2','B','LightArmour','MysteryWorld.EastEnd')
+bandit3=Create_char('bandit3','B','LightArmour','MysteryWorld.EastEnd')
+emily=Create_char('Emily','c','Bandit','MysteryWorld.Horse')
 #-----------
 
 # CREATE OBJECTS OR GLOBAL VARIABLES

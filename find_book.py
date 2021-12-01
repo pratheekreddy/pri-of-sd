@@ -3,7 +3,7 @@ from create_item import Create_item
 from message import Message
 
 
-def AlchemyStore(charlie_earth,a_shop_vendor):
+def find_dager(charlie_earth,a_shop_vendor):
     action('Enter('+charlie_earth.name+',AlchemyShop.Door)')
     Create_item('Apple','Apple','AlchemyShop.Table')
     Create_item('EvilBook','EvilBook','AlchemyShop.Bookshelf')
