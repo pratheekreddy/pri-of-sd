@@ -1,3 +1,4 @@
+from MysteryWorld import MysteryWorld
 from action import action
 from create_item import Create_item
 from message import Message
@@ -13,3 +14,4 @@ def BlackSmith(charlie_earth,b_shop_vendor):
     Message('Charlie: Hi! can I get this sword please')
     Message('Vendor: Sure! Have a good day!')
     action('Exit('+charlie_earth.name+',Blacksmith.Door')
+    MysteryWorld(charlie_earth)

@@ -5,13 +5,17 @@
 from MysteryWorld import MysteryWorld
 from action import action
 from create_char import Create_char
+from engage_fight import engage_fight
 from explore_city import explore_city
+from find_dager import find_dager
+from find_book import find_book
 from intro import dream
 from begining import scene1
 from alchemy_store import AlchemyStore
 from blacksmith import BlackSmith
 from Places import Place
 from visit_fruitshop import visit_Fruitshop
+from call_for_help import call_for_help
 
 
 #CREATE LOCATIONS
@@ -23,7 +27,7 @@ Blacksmith=Place('Blacksmith','Blacksmith')
 FruitShop=Place('FruitShop','AlchemyShop')
 P_MysteryWorld=Place('P_MysteryWorld','City')
 #-----------
-
+action('SetTitle(\"Witch''s Gambit\")')
 action('ShowMenu()')
 
 # CREATE Charactors 
@@ -49,9 +53,12 @@ dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4)
 scene1(charlie_earth)
 AlchemyStore(charlie_earth,a_shop_vendor)
 #BlackSmith(charlie_earth,b_shop_vendor)
-MysteryWorld(charlie_earth)
 visit_Fruitshop(charlie_earth,f_shop_vendor)
 explore_city(charlie_earth,bandit1,bandit2,bandit3)
+engage_fight(charlie_earth,bandit1,bandit2,bandit3)
+call_for_help(emily,bandit1,bandit2,bandit3,charlie_earth)
+find_dager(charlie_earth,b_shop_vendor)
+find_book(charlie_earth,a_shop_vendor)
 
 
 while(True):

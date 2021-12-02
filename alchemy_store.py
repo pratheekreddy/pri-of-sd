@@ -1,3 +1,4 @@
+from MysteryWorld import MysteryWorld
 from action import action
 from create_item import Create_item
 from message import Message
@@ -17,3 +18,4 @@ def AlchemyStore(charlie_earth,a_shop_vendor):
     #action('PutDown('+charlie_earth.name+',EvilBook)')
     Message('Vendor: Sure! Have a good day!')
     action('Exit('+charlie_earth.name+',AlchemyShop.Door)')
+    MysteryWorld(charlie_earth)
