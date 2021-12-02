@@ -26,6 +26,7 @@ AlchemyShop=Place('AlchemyShop','AlchemyShop')
 Blacksmith=Place('Blacksmith','Blacksmith')
 FruitShop=Place('FruitShop','AlchemyShop')
 P_MysteryWorld=Place('P_MysteryWorld','City')
+Courtyard=Place('Courtyard','Courtyard')
 #-----------
 action('SetTitle(\"Witch''s Gambit\")')
 action('ShowMenu()')
@@ -44,6 +45,7 @@ bandit1=Create_char('bandit1','B','LightArmour','P_MysteryWorld.EastEnd')
 bandit2=Create_char('bandit2','B','LightArmour','P_MysteryWorld.EastEnd')
 bandit3=Create_char('bandit3','B','LightArmour','P_MysteryWorld.EastEnd')
 emily=Create_char('Emily','c','Bandit','P_MysteryWorld.Horse')
+witch=Create_char('witch','E','Witch','Courtyard.Fountain','Pony')
 #-----------
 
 # CREATE OBJECTS OR GLOBAL VARIABLES

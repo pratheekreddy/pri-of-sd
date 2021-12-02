@@ -11,14 +11,15 @@ def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
     action('HideMenu()')
 
     charlie_dream.camera()
-    action('SetCameraMode(Track)')
     action('SetCameraMode(Follow)')
     #player choise
     action('EnableIcon(war_with_sol,Sword,Charlie,"Kill with Sword",true)')
     #war_with_sol(charlie_dream,soldier1,soldier2,soldier3,soldier4)
-    #function for sleeping gass
+    #function for sleeping gas
     sleeping_gas(soldier1,soldier2,soldier3,soldier4)
     # function for escape
+    #Sneak(charlie_dream)
+
     action('SetCameraMode(Track)')
     action('WalkTo('+charlie_dream.name+',Ruins.Chest)')
     action('PutDown('+charlie_dream.name+',Sword_charlie)')
@@ -43,3 +44,7 @@ def sleeping_gas(soldier1,soldier2,soldier3,soldier4):
     action('Die('+soldier3.name+')',False)
     action('CreateEffect('+soldier4.name+',Brew)',False)
     action('Die('+soldier4.name+')',False)
+
+def Sneak(charlie_dream):
+    action('CreateEffect('+charlie_dream.name+', Aura)')
+    action('SetPosition('+charlie_dream.name+',Ruins.Chest')
