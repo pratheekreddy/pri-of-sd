@@ -52,7 +52,6 @@ witch=Create_char('witch','E','Witch','Courtyard.Fountain','Pony')
 
 #------------
 dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4)
-scene1(charlie_earth)
 AlchemyStore(charlie_earth,a_shop_vendor)
 #BlackSmith(charlie_earth,b_shop_vendor)
 visit_Fruitshop(charlie_earth,f_shop_vendor)

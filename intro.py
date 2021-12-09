@@ -1,5 +1,6 @@
 from action import action
 from attack import attack
+from begining import scene1
 
 def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
     action('Sleep('+charlie_earth.name+',Cottage.Bed)')
@@ -12,19 +13,20 @@ def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
 
     charlie_dream.camera()
     action('SetCameraMode(Follow)')
-    #player choise
-    action('EnableIcon(war_with_sol,Sword,Charlie,"Kill with Sword",true)')
-    #war_with_sol(charlie_dream,soldier1,soldier2,soldier3,soldier4)
-    #function for sleeping gas
-    sleeping_gas(soldier1,soldier2,soldier3,soldier4)
-    # function for escape
-    #Sneak(charlie_dream)
+    
+    action('EnableIcon(war_with_sol,sword,Charlie1,"Kill with Sword")')
+    action('EnableIcon(sleeping_gas,potion,Charlie1,"Sleeping Gas ")')
+    action('EnableIcon(sneak,helm,Charlie1,"Sneak to the chest")')
+    action('EnableInput()')
+    choice1(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4)
+    action('DisableInput()')
 
     action('SetCameraMode(Track)')
     action('WalkTo('+charlie_dream.name+',Ruins.Chest)')
     action('PutDown('+charlie_dream.name+',Sword_charlie)')
     action('OpenFurniture('+charlie_dream.name+',Ruins.Chest)')
     action('CreateEffect(Ruins.Chest,Explosion)')
+    scene1(charlie_earth)
 
 
 def war_with_sol(charlie_dream,soldier1,soldier2,soldier3,soldier4):
@@ -48,3 +50,13 @@ def sleeping_gas(soldier1,soldier2,soldier3,soldier4):
 def Sneak(charlie_dream):
     action('CreateEffect('+charlie_dream.name+', Aura)')
     action('SetPosition('+charlie_dream.name+',Ruins.Chest')
+
+def choice1(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
+    while True:
+        received=input()
+        if received=='input war_with_sol Charlie1':
+           return war_with_sol(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4)
+        elif received=='input sleeping_gas Charlie1':
+           return sleeping_gas(soldier1,soldier2,soldier3,soldier4)
+        elif received=='input sneak Charlie1':
+            return Sneak(charlie_dream)
