@@ -10,10 +10,10 @@ def MysteryWorld(charlie_earth):
     action('EnableIcon(Explore_city,city,Charlie,"Explore city")')
     action('EnableIcon(Fruit_shop,apple,Charlie,"Go to fruit shop")')
     action('EnableInput()')
-    choice3(charlie_earth)
+    choice4(charlie_earth)
     action('DisableInput()')
 
-def choice3(charlie_earth):
+def choice4(charlie_earth):
     while True:
         received=input()
         if received=='input Explore_city Charlie':

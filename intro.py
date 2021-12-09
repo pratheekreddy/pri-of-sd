@@ -1,6 +1,7 @@
 from action import action
 from attack import attack
-from begining import scene1
+# from begining import scene1
+from message import Message
 
 def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
     action('Sleep('+charlie_earth.name+',Cottage.Bed)')
@@ -9,14 +10,16 @@ def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
     soldier2.give_item('Sword_sol3','Sword')
     soldier3.give_item('Sword3','Sword')
     soldier4.give_item('Sword4','Sword')
+    action('HideNarration()')
     action('HideMenu()')
+    Message('Player controls: Right click on a highlighted item or character to see the choice bar and click on a choice')
 
     charlie_dream.camera()
-    action('SetCameraMode(Follow)')
-    
+    action('SetCameraMode(Track)')
     action('EnableIcon(war_with_sol,sword,Charlie1,"Kill with Sword")')
     action('EnableIcon(sleeping_gas,potion,Charlie1,"Sleeping Gas ")')
     action('EnableIcon(sneak,helm,Charlie1,"Sneak to the chest")')
+    Message('Right click on character Charlie to get the choice bar.')
     action('EnableInput()')
     choice1(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4)
     action('DisableInput()')
@@ -26,15 +29,14 @@ def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
     action('PutDown('+charlie_dream.name+',Sword_charlie)')
     action('OpenFurniture('+charlie_dream.name+',Ruins.Chest)')
     action('CreateEffect(Ruins.Chest,Explosion)')
-    scene1(charlie_earth)
+    # scene1(charlie_earth)
 
 
 def war_with_sol(charlie_dream,soldier1,soldier2,soldier3,soldier4):
+    action('SetCameraMode(Follow)')
     attack(charlie_dream.name,soldier1.name)
     attack(charlie_dream.name,soldier2.name)
-
     attack(charlie_dream.name,soldier3.name)
-
     attack(charlie_dream.name,soldier4.name)
 
 def sleeping_gas(soldier1,soldier2,soldier3,soldier4):

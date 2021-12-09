@@ -2,21 +2,13 @@
 # Configure this file in your startExperienceManager file
 # Try not to logic in this file except importing files.(should follow modularized coding practice)
 
-from MysteryWorld import MysteryWorld
+# from MysteryWorld import MysteryWorld
 from action import action
-from create_char import Create_char
-from engage_fight import engage_fight
-from explore_city import explore_city
-from find_dager import find_dager
-from find_book import find_book
-from intro import dream
-from begining import scene1
-from alchemy_store import AlchemyStore
-from blacksmith import BlackSmith
-from Places import Place
-from visit_fruitshop import visit_Fruitshop
-from call_for_help import call_for_help
 
+from create_char import Create_char
+from intro import dream
+from Places import Place
+from message import Message
 
 #CREATE LOCATIONS
 Cottage=Place('Cottage', 'Cottage')
@@ -30,6 +22,8 @@ Courtyard=Place('Courtyard','Courtyard')
 #-----------
 action('SetTitle(\"Witch''s Gambit\")')
 action('ShowMenu()')
+action('SetNarration(Loading resources...)')
+action('ShowNarration()')
 
 # CREATE Charactors 
 charlie_earth=Create_char('Charlie','D','Merchant','Cottage.Bed','Spiky')
@@ -52,15 +46,8 @@ witch=Create_char('witch','E','Witch','Courtyard.Fountain','Pony')
 
 #------------
 dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4)
-AlchemyStore(charlie_earth,a_shop_vendor)
-#BlackSmith(charlie_earth,b_shop_vendor)
-visit_Fruitshop(charlie_earth,f_shop_vendor)
-explore_city(charlie_earth,bandit1,bandit2,bandit3)
-engage_fight(charlie_earth,bandit1,bandit2,bandit3)
-call_for_help(emily,bandit1,bandit2,bandit3,charlie_earth)
-find_dager(charlie_earth,b_shop_vendor)
-find_book(charlie_earth,a_shop_vendor)
-
+from begining import scene1
+scene1(charlie_earth)
 
 while(True):
     input(charlie_earth)
