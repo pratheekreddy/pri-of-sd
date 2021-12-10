@@ -24,3 +24,15 @@ class Create_char:
 
     def expression(self,exp):
         action('SetExpression('+self.name+','+exp+')')
+
+    def set_clothes(self,cloth):
+        action('SetClothing('+self.name+', '+cloth+')')
+
+    def set_position(self,position):
+        action('SetPosition('+self.name+','+position+')')
+
+    def sleep(self,place):
+        action('Sleep('+self.name+', '+place+')')
+    
+    def die(self):
+        action('Die('+self.name+')')

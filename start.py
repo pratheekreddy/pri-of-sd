@@ -10,6 +10,9 @@ from create_char import Create_char
 from create_item import Create_item
 from Places import Place
 from attack import attack
+from the_end import the_end
+from find_dager import find_dager
+from find_book import find_book
 #CREATE LOCATIONS
 Cottage=Place('Cottage', 'Cottage')
 Ruins=Place('Ruins','Ruins')
@@ -278,7 +281,6 @@ def call_for_help(charlie_earth):
     attack(emily.name,bandit1.name)
     attack(emily.name,bandit2.name)
     attack(emily.name,bandit3.name)
-
     d_box(charlie_earth.name,emily.name)
     Message1('Charlie: Thank you soo much for rescuing me!. You are my hero!')
     Message1('Emily: I am Emily!')
@@ -292,34 +294,11 @@ def call_for_help(charlie_earth):
 
     if charlie_earth.item=='book':
         Message('Since I have the Evil book I need to find the dagger.')
-        find_dager(charlie_earth)
+        find_dager(charlie_earth,witch)
     elif charlie_earth.item=='dagger':
         Message('Since I have the dagger I have to find the Evil book')
-        find_book(charlie_earth)
+        find_book(charlie_earth,witch)
 
-def find_book(charlie_earth):
-    Message('Since you have a daggger find the book and use the spell to activate sword power')
-    action('Enter('+charlie_earth.name+',AlchemyShop.Door)')
-    EvilBook2=Create_item('EvilBook2','EvilBook','AlchemyShop.Bookshelf')
-    action('WalkTo('+charlie_earth.name+',EvilBook2)')
-    action('Take('+charlie_earth.name+',EvilBook2)')
-    Message('Charlie reads the spell: Abrakha Dhabra Boom.')
-    action('SetPosition(Sword_b,'+charlie_earth.name+')',False)
-    action('EnableEffect(Spiralflame,Sword_b)')
-    action('Exit('+charlie_earth.name+',AlchemyShop.Door')
-    the_end(charlie_earth)
-
-def the_end(charlie_earth):
-    action('SetPosition('+charlie_earth.name+',Courtyard.Gate)')
-    action('CreateEffect('+charlie_earth.name+', Resurrection)')
-    Message('Charlie: You are the witch that made me come here. I must kill you so that I can return to my world!')
-    Message('Witch: No dont. I did this because I love you!' )
-    Message('Charlie: What you did is not love. You endagered my life and now Im gonna kill you!!')
-    action('Draw('+charlie_earth.name+',Sword_b)')
-    attack(charlie_earth.name,witch.name)
-    action('Die('+witch.name+')')
-    Message('Charlie: Now that I killed the witch with the spelled dagger I can return to my world.')
-    Message('The END')
 
 
 def visit_Fruitshop(charlie_earth):
@@ -350,17 +329,6 @@ def engage_fight(charlie_earth):
     action('Attack('+bandit1.name+','+charlie_earth.name+')')
     action('Die('+charlie_earth.name+')')
     MysteryWorld(charlie_earth)
-
-def find_dager(charlie_earth):
-    action('WalkTo('+charlie_earth.name+',MysteryWorld.BlueHouseDoor)')
-    action('Enter('+charlie_earth.name+',Blacksmith.Door)')
-    Sword_dager=Create_item('Sword_dager','Sword','Blacksmith.Table')
-    action('WalkTo('+charlie_earth.name+',Sword_dager)')
-    Message('Charlie reads the spell: Abrakha Dhabra Boom.')
-    action('Take('+charlie_earth.name+',Sword_dager)')
-    action('EnableEffect(Spiralflame,'+Sword_dager.name+')')
-    action('Exit('+charlie_earth.name+',Blacksmith.Door')
-    the_end(charlie_earth)
 
 
 

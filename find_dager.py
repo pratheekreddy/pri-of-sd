@@ -4,7 +4,7 @@ from message import Message
 from the_end import the_end
 
 
-def find_dager(charlie_earth):
+def find_dager(charlie_earth,witch):
     action('WalkTo('+charlie_earth.name+',MysteryWorld.BlueHouseDoor)')
     action('Enter('+charlie_earth.name+',Blacksmith.Door)')
     Sword_dager=Create_item('Sword_dager','Sword','Blacksmith.Table')
@@ -13,4 +13,4 @@ def find_dager(charlie_earth):
     action('Take('+charlie_earth.name+',Sword_dager)')
     action('EnableEffect(Spiralflame,'+Sword_dager.name+')')
     action('Exit('+charlie_earth.name+',Blacksmith.Door')
-    the_end(charlie_earth)
+    the_end(charlie_earth,witch)
