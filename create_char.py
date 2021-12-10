@@ -6,8 +6,9 @@ from create_item import Create_item
 
 class Create_char:
 
-    def __init__(self,name , body_type , clothing ,position, hair="Spiky"):
+    def __init__(self,name , body_type , clothing ,position, item=None,hair="Spiky"):
         self.name = name
+        self.item=item
         action('CreateCharacter('+name+','+body_type+')')
         action('SetClothing('+name+', '+clothing+')')
         action('SetExpression('+name+',Happy)')
@@ -20,3 +21,18 @@ class Create_char:
 
     def camera(self):
         action('SetCameraFocus('+self.name+')')
+
+    def expression(self,exp):
+        action('SetExpression('+self.name+','+exp+')')
+
+    def set_clothes(self,cloth):
+        action('SetClothing('+self.name+', '+cloth+')')
+
+    def set_position(self,position):
+        action('SetPosition('+self.name+','+position+')')
+
+    def sleep(self,place):
+        action('Sleep('+self.name+', '+place+')')
+    
+    def die(self):
+        action('Die('+self.name+')')

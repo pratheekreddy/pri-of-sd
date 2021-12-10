@@ -10,3 +10,7 @@ class Create_item:
         self.item=item
         action('CreateItem('+item_name+','+item+')')
         action('SetPosition('+item_name+','+position+')')
+
+    def set_position(self,name):
+        action('SetPosition('+self.item+','+name+')')
+        
