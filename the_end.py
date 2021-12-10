@@ -11,3 +11,4 @@ def the_end(charlie_earth):
     Message('Charlie: What you did is not love. You endagered my life and now Im gonna kill you!!')
     attack(charlie_earth.name,witch.name)
     action('Die('+witch.name+')')
+    

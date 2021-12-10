@@ -16,10 +16,11 @@ def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
 
     charlie_dream.camera()
     action('SetCameraMode(Track)')
+    Message('Right click on character Charlie to get the choice bar. Use arrow keys to move the character.')
     action('EnableIcon(war_with_sol,sword,Charlie1,"Kill with Sword")')
     action('EnableIcon(sleeping_gas,potion,Charlie1,"Sleeping Gas ")')
     action('EnableIcon(sneak,helm,Charlie1,"Sneak to the chest")')
-    Message('Right click on character Charlie to get the choice bar.')
+    
     action('EnableInput()')
     choice1(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4)
     action('DisableInput()')
@@ -29,7 +30,8 @@ def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
     action('PutDown('+charlie_dream.name+',Sword_charlie)')
     action('OpenFurniture('+charlie_dream.name+',Ruins.Chest)')
     action('CreateEffect(Ruins.Chest,Explosion)')
-    # scene1(charlie_earth)
+    from begining import scene1
+    scene1(charlie_earth)
 
 
 def war_with_sol(charlie_dream,soldier1,soldier2,soldier3,soldier4):

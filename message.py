@@ -1,4 +1,5 @@
 from action import action
+from attack import attack
 
 def Message(message):
     action('SetNarration('+message+')')
@@ -11,3 +12,4 @@ def d_box(a,b):
     action('SetRight('+b+')')
 def Message1(m):
     action('SetDialog('+m+')')
+    action('Wait(5)')
