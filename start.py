@@ -6,12 +6,9 @@
 from action import action
 from attack import attack
 from message import Message, Message1, d_box
-# from the_end import the_end
-# from find_dager import find_dager
 from create_char import Create_char
 from create_item import Create_item
 from Places import Place
-from message import Message
 from attack import attack
 #CREATE LOCATIONS
 Cottage=Place('Cottage', 'Cottage')
@@ -231,6 +228,8 @@ def choice3(charlie_earth):
             return buy_book(charlie_earth)
 
 def MysteryWorld(charlie_earth):
+    charlie_earth.expression('happy')
+    f_shop_vendor.expression('happy')
     action('SetPosition('+charlie_earth.name+',P_MysteryWorld.NorthEnd)')
     action('CreateEffect('+charlie_earth.name+',Resurrection)')
 
@@ -329,14 +328,15 @@ def visit_Fruitshop(charlie_earth):
     f_shop_vendor.give_item('Sword_t','Sword')
     action('Take('+charlie_earth.name+',Apple1_fruit)')
     action('WalkTo('+charlie_earth.name+','+f_shop_vendor.name+')')
-    d_box(charlie_earth.name,'Vendor')
+    d_box(charlie_earth.name,f_shop_vendor.name)
     Message1('Charlie: Hi! can I get this apple please)')
     Message1('Vendor:kya!! - what!')
+    f_shop_vendor.expression('angry')
+    charlie_earth.expression('scared')
     Message1('Charlie: Pardon me! I did not understand.')
     Message1('Vendor: kya bath kar rahe ho??? - what are you talking???')
     Message1('Things get esculated and the vendor gets angry!')
     action('HideDialog()')
-    f_shop_vendor.expression('angry')
     action('Draw('+f_shop_vendor.name+',Sword_t')
     action('Attack('+f_shop_vendor.name+','+charlie_earth.name+')')
     action('Die('+charlie_earth.name+')')
