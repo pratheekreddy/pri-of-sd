@@ -170,7 +170,7 @@ def AlchemyStore(charlie_earth):
     action('EnableIcon("buy_bag",lockedchest,Charlie,"Buy Bag")')
     action('EnableIcon("buy_book",evilbook,Charlie,"Buy Book")')
     action('EnableInput()')
-    Message('System: Right click on charlie and select an icon.')
+    Message('Hint:: Right click on charlie and select an icon.')
     choice3(charlie_earth)
     action('DisableIcon("buy_bag",Charlie)')
     action('DisableIcon("buy_apple",Charlie)')
@@ -190,6 +190,7 @@ def buy_apple(charlie_earth):
     action('Exit('+charlie_earth.name+',AlchemyShop.Door)')
     Message('Charlie goes back home after buying an apple and another boring day starts again!')
     action('SetPosition('+charlie_earth.name+',Cottage.Bed)')
+    Message('Hint:: Selecting to buy an apple again and again might put to you on a boring loop!.')
     home(charlie_earth)
 
 def buy_bag(charlie_earth):
@@ -203,6 +204,7 @@ def buy_bag(charlie_earth):
     action('HideDialog()')
     action('Exit('+charlie_earth.name+',AlchemyShop.Door)')
     Message('Charlie goes back home after buying a bag and another boring day starts again!')
+    Message('Hint:: Selecting to buy a bag again and again might put to you on a boring loop!.')
     action('SetPosition('+charlie_earth.name+',Cottage.Bed)')
     home(charlie_earth)
 
@@ -282,7 +284,7 @@ def explore_city(charlie_earth):
     action('EnableIcon("call_for_help",kneel,Charlie,"Call for help")')
     action('EnableIcon("engage_fight",fist,Charlie,"Engage fight")')
     action('EnableInput()')
-    Message('Right click on charlie for choice  bar.')
+    Message('Hint:: Right click on charlie for choice  bar.')
     choice5(charlie_earth)
     action('DisableIcon("call_for_help",Charlie)')
     action('DisableIcon("engage_fight",Charlie)')
@@ -339,6 +341,7 @@ def visit_Fruitshop(charlie_earth):
     action('Draw('+f_shop_vendor.name+',Sword_b')
     action('Attack('+f_shop_vendor.name+','+charlie_earth.name+')')
     action('Die('+charlie_earth.name+')')
+    Message('Hint:: Going to the store again and again might put to you on a boring loop and keep dying!.')
     MysteryWorld(charlie_earth)
 
 
