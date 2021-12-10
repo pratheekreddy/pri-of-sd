@@ -10,7 +10,6 @@ class Hero(Create_char):
     def getinstance(cls,name, body_type , clothing ,position,items, hair="Spiky"):
         if cls._shared is None:
             cls._shared=cls.__new__(cls)
-            # cls._shared.name=name
             Create_char.__init__(cls,name,body_type,clothing,position)
             cls._shared.items=items
         return cls._shared
