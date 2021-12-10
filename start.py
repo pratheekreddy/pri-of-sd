@@ -336,7 +336,7 @@ def visit_Fruitshop(charlie_earth):
     Message1('Vendor: kya bath kar rahe ho??? - what are you talking???')
     Message1('Things get esculated and the vendor gets angry!')
     action('HideDialog()')
-    action('Draw('+f_shop_vendor.name+',Sword_t')
+    action('Draw('+f_shop_vendor.name+',Sword_b')
     action('Attack('+f_shop_vendor.name+','+charlie_earth.name+')')
     action('Die('+charlie_earth.name+')')
     MysteryWorld(charlie_earth)
