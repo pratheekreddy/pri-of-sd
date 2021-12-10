@@ -10,7 +10,6 @@ from create_char import Create_char
 from create_item import Create_item
 from Places import Place
 from attack import attack
-from the_end import the_end
 from find_dager import find_dager
 from find_book import find_book
 #CREATE LOCATIONS
@@ -22,6 +21,7 @@ Blacksmith=Place('Blacksmith','Blacksmith')
 FruitShop=Place('FruitShop','AlchemyShop')
 P_MysteryWorld=Place('P_MysteryWorld','City')
 Courtyard=Place('Courtyard','Courtyard')
+end = Place('end','Cottage')
 #-----------
 action('SetTitle(\"Witch''s Gambit\")')
 action('ShowMenu()')
@@ -29,15 +29,15 @@ action('SetNarration(Loading resources...)')
 action('ShowNarration()')
 
 # CREATE Charactors 
-charlie_earth=Create_char('Charlie','D','Merchant','Cottage.Bed','Spiky')
+charlie_earth=Create_char('Charlie','D','Peasant','Cottage.Bed','Spiky')
 charlie_dream=Create_char('Charlie1','D','King','Ruins.Exit','Spiky')
 soldier1=Create_char('Soldier1','D','HeavyArmour','Ruins.DirtPile')
 soldier2=Create_char('Soldier2','D','HeavyArmour','Ruins.Plant')
 soldier3=Create_char('Soldier3','D','HeavyArmour','Ruins.Altar')
 soldier4=Create_char('Soldier4','D','HeavyArmour','Ruins.Throne')
-a_shop_vendor=Create_char('a_shop_vendor','A','Merchant','AlchemyShop.Bar')
-b_shop_vendor=Create_char('b_shop_vendor','F','Merchant','Blacksmith.Anvil')
-f_shop_vendor=Create_char('f_shop_vendor','A','Peasant','FruitShop.Bar')
+a_shop_vendor=Create_char('a_shop_vendor','A','Beggar','AlchemyShop.Bar')
+b_shop_vendor=Create_char('b_shop_vendor','F','Beggar','Blacksmith.Anvil')
+f_shop_vendor=Create_char('f_shop_vendor','A','Merchant','FruitShop.Bar')
 bandit1=Create_char('bandit1','B','LightArmour','P_MysteryWorld.EastEnd')
 bandit2=Create_char('bandit2','B','LightArmour','P_MysteryWorld.EastEnd')
 bandit3=Create_char('bandit3','B','LightArmour','P_MysteryWorld.EastEnd')
@@ -236,9 +236,20 @@ def MysteryWorld(charlie_earth):
     action('SetPosition('+charlie_earth.name+',P_MysteryWorld.NorthEnd)')
     action('CreateEffect('+charlie_earth.name+',Resurrection)')
 
+    action('EnableIcon("clothing1",armour,Charlie,"Wear Armour")')
+    action('EnableIcon("clothing2",dress,Charlie,"Wear new clothes")')
+    action('EnableInput()')
+    Message('Right click on charlie for choice bar.')
+    clothes(charlie_earth)
+    action('DisableInput()')
+    action('DisableIcon("clothing1",Charlie)')
+    action('DisableIcon("clothing2",Charlie)')
+
+
     action('EnableIcon("Explore_city",city,Charlie,"Explore city")')
     action('EnableIcon("Fruit_shop",apple,Charlie,"Go to fruit shop")')
     action('EnableInput()')
+    Message('Right click on charlie for choice bar.')
     choice4(charlie_earth)
     action('DisableInput()')
     action('DisableIcon("Explore_city",Charlie)')
@@ -252,6 +263,14 @@ def choice4(charlie_earth):
         elif received=='input Fruit_shop Charlie':
            return visit_Fruitshop(charlie_earth)
 
+def clothes(charlie_earth):
+    while True:
+        received=input()
+        if received=='input clothing1 Charlie':
+           return charlie_earth.set_clothes('HeavyArmour')
+        elif received=='input clothing2 Charlie':
+            return charlie_earth.set_clothes('Priest')
+
 def explore_city(charlie_earth):
     action('WalkTo('+charlie_earth.name+',P_MysteryWorld.WestEnd)')
     action('WalkTo('+charlie_earth.name+',P_MysteryWorld.Fountain)')
@@ -263,6 +282,7 @@ def explore_city(charlie_earth):
     action('EnableIcon("call_for_help",kneel,Charlie,"Call for help")')
     action('EnableIcon("engage_fight",fist,Charlie,"Engage fight")')
     action('EnableInput()')
+    Message('Right click on charlie for choice  bar.')
     choice5(charlie_earth)
     action('DisableIcon("call_for_help",Charlie)')
     action('DisableIcon("engage_fight",Charlie)')

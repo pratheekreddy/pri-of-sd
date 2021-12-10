@@ -2,6 +2,7 @@ from action import action
 from call_for_help import call_for_help
 from engage_fight import engage_fight
 from start import bandit1,bandit2,bandit3
+from message import Message
 
 def explore_city(charlie_earth):
     action('WalkTo('+charlie_earth.name+',P_MysteryWorld.WestEnd)')
@@ -13,6 +14,7 @@ def explore_city(charlie_earth):
     action('EnableIcon(call_for_help,kneel,Charlie,"Call for help")')
     action('EnableIcon(engage_fight,fist,Charlie,"Engage fight")')
     action('EnableInput()')
+    Message('Right click on charlie for choice  bar.')
     choice5(charlie_earth)
     action('DisableInput()')
 
