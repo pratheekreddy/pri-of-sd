@@ -58,7 +58,8 @@ def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
     soldier3.give_item('Sword3','Sword')
     soldier4.give_item('Sword4','Sword')
     action('HideNarration()')
-    action('HideMenu()')
+    if(input()=='input Selected Start'):
+        action('HideMenu()')
     Message('Player controls: Right click on a highlighted item or character to see the choice bar and click on a choice')
 
     charlie_dream.camera()
@@ -78,6 +79,7 @@ def dream(charlie_earth,charlie_dream,soldier1,soldier2,soldier3,soldier4):
     action('OpenFurniture('+charlie_dream.name+',Ruins.Chest)')
     action('CreateEffect(Ruins.Chest,Explosion)')
     action('CreateEffect(Ruins.Chest,Explosion)')
+    action('Wait(1)')
     # from begining import scene1
     scene1(charlie_earth)
 
@@ -327,11 +329,13 @@ def visit_Fruitshop(charlie_earth):
     f_shop_vendor.give_item('Sword_t','Sword')
     action('Take('+charlie_earth.name+',Apple1_fruit)')
     action('WalkTo('+charlie_earth.name+','+f_shop_vendor.name+')')
-    Message('Charlie: Hi! can I get this apple please)')
-    Message('Vendor: Nahi!')
-    Message('Charlie: Pardon me! I did not understand.')
-    Message('Vendor: Yaha se baahar jaao, kon aadmi ho tum')
-    Message('Things get esculated and the vendor gets angry!')
+    d_box(charlie_earth.name,'Vendor')
+    Message1('Charlie: Hi! can I get this apple please)')
+    Message1('Vendor:kya!! - what!')
+    Message1('Charlie: Pardon me! I did not understand.')
+    Message1('Vendor: kya bath kar rahe ho??? - what are you talking???')
+    Message1('Things get esculated and the vendor gets angry!')
+    action('HideDialog()')
     f_shop_vendor.expression('angry')
     action('Draw('+f_shop_vendor.name+',Sword_t')
     action('Attack('+f_shop_vendor.name+','+charlie_earth.name+')')
